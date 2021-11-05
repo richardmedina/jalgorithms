@@ -1,6 +1,7 @@
 package jalgorithms.tests.collections.sets;
 
 
+import jalgorithms.common.util.StopWatch;
 import jalgorithms.impl.util.SimpleStopWatch;
 import jalgorithms.tests.collections.CollectionTests;
 import org.junit.Assert;
@@ -29,7 +30,11 @@ public class HashSetTests implements CollectionTests {
 
     @Override
     public void deletionTest() {
+        var watch = new SimpleStopWatch();
+        watch.start();
 
+        watch.stop();
+        watch.print();
     }
 
     @Override

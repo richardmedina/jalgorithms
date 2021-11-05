@@ -1,4 +1,4 @@
-package jalgorithms.tests.customalgorithms.smallest;
+package jalgorithms.tests.customalgorithms;
 
 import jalgorithms.common.customalgorithms.CustomAlgorithm;
 import jalgorithms.impl.customalgorithms.smallest.SmallestInArrayAlgorithm;
