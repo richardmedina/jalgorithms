@@ -4,20 +4,20 @@ import jalgorithms.tests.collections.CollectionTests;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 
-/********
- * HashSet. It's a collection where unique values can only exists (keys)
+/****
+ * LinkedHashSet. It's a collection where unique value can exists keeping the insertion order
  * We can verify whether a certain  value exist or not
  * Add. collection.add(obj);
  * Delete. collection.delete(obj)
  * Search.
  *  We can use collection.contains(obj) to get whether a certain item exist or not in collection
  */
+public class LinkedHashSetTests implements CollectionTests {
 
-public class HashSetTests implements CollectionTests {
-    private static HashSet<String> getPopulatedCollection() {
-        HashSet<String> collection = new HashSet<>();
+    private static LinkedHashSet<String> getPopulatedCollection() {
+        LinkedHashSet<String> collection = new LinkedHashSet<>();
 
         collection.add("Two");
         collection.add("One");
@@ -31,48 +31,47 @@ public class HashSetTests implements CollectionTests {
     public void testInsertion() {
         // Arrange
         int expected = 3;
-        HashSet<String> collection;
+        LinkedHashSet<String> collection;
 
         // Act
         collection = getPopulatedCollection();
+
+        for(String item : collection){
+            System.out.println("Item: " + item);
+        }
 
         // Assert
         Assert.assertEquals(expected, collection.size());
     }
 
-    @Test
     @Override
     public void testDeletion() {
         // Arrange
         int expected = 2;
-        HashSet<String> collection = getPopulatedCollection();
+        LinkedHashSet<String> collection = getPopulatedCollection();
 
-        for(String item : collection) {
-            System.out.println("Item: " + item);
-        }
-
-        // Act
+        //Act
         collection.remove("Two");
 
         // Assert
-        Assert.assertEquals(expected, collection.size());
+        Assert.assertEquals(expected, collection);
     }
 
     @Test
     @Override
     public void testSearch() {
         // Arrange
-        boolean expected = true;
-        HashSet<String> collection = getPopulatedCollection();
+        LinkedHashSet<String> collection = getPopulatedCollection();
 
         // Act
-        boolean containsOne  = collection.contains("One");
-        boolean containsTwo = collection.contains("Two");
-        boolean containsNine = collection.contains("Nine");
+        boolean oneExists = collection.contains("One");
+        boolean twoExists = collection.contains("Two");
+        boolean nineExists = collection.contains("Nine");
 
-        //Assert
-        Assert.assertEquals(true, containsOne);
-        Assert.assertEquals(true, containsTwo);
-        Assert.assertEquals(false, containsNine);
+        // Assert
+        Assert.assertEquals(true, oneExists);
+        Assert.assertEquals(true, twoExists);
+        Assert.assertEquals(false, nineExists);
+
     }
 }
