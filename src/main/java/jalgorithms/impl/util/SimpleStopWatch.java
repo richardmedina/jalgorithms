@@ -8,28 +8,16 @@ import java.time.LocalDateTime;
 public class SimpleStopWatch implements StopWatch {
 
     LocalDateTime startTime = null;
-    LocalDateTime endTime = null;
-
 
     @Override
-    public void start() {
+    public void init() {
         startTime = LocalDateTime.now();
-    }
-
-    @Override
-    public void stop() {
-        endTime = LocalDateTime.now();
-    }
-
-    @Override
-    public void restart() {
-        startTime = LocalDateTime.now();
-        endTime = null;
     }
 
     @Override
     public void print() {
-        var duration = Duration.between(startTime, endTime);
+        LocalDateTime endTime = LocalDateTime.now();
+        Duration duration = Duration.between(startTime, endTime);
         System.out.println(duration);
     }
 
