@@ -61,9 +61,9 @@ public class HashSetTests implements CollectionTests {
 
         // Act
 
-        boolean containsZero  = collection.contains('0');
-        boolean containsThree = collection.contains('3');
-        boolean containsNine = collection.contains('9');
+        boolean containsZero  = collection.contains("0");
+        boolean containsThree = collection.contains("3");
+        boolean containsNine = collection.contains("9");
 
         //Assert
         Assert.assertEquals(true, containsZero);
