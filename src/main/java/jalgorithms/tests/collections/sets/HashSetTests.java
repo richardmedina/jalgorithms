@@ -28,7 +28,7 @@ public class HashSetTests implements CollectionTests {
 
     @Test
     @Override
-    public void testInsertion() {
+    public void testAdd() {
         // Arrange
         int expected = 3;
         HashSet<String> collection;
@@ -42,7 +42,7 @@ public class HashSetTests implements CollectionTests {
 
     @Test
     @Override
-    public void testDeletion() {
+    public void testRemove() {
         // Arrange
         int expected = 2;
         HashSet<String> collection = getPopulatedCollection();

@@ -21,7 +21,7 @@ public class TreeHashSetTests implements CollectionTests {
 
     @Test
     @Override
-    public void testInsertion() {
+    public void testAdd() {
         // Arrange
         int expected = 3;
         TreeSet<String> collection;
@@ -39,7 +39,7 @@ public class TreeHashSetTests implements CollectionTests {
 
     @Test
     @Override
-    public void testDeletion() {
+    public void testRemove() {
         // Arrange
         int expected = 2;
         TreeSet<String> collection = getPopulatedCollection();

@@ -28,7 +28,7 @@ public class LinkedHashSetTests implements CollectionTests {
 
     @Test
     @Override
-    public void testInsertion() {
+    public void testAdd() {
         // Arrange
         int expected = 3;
         LinkedHashSet<String> collection;
@@ -44,8 +44,9 @@ public class LinkedHashSetTests implements CollectionTests {
         Assert.assertEquals(expected, collection.size());
     }
 
+    @Test
     @Override
-    public void testDeletion() {
+    public void testRemove() {
         // Arrange
         int expected = 2;
         LinkedHashSet<String> collection = getPopulatedCollection();
@@ -54,7 +55,7 @@ public class LinkedHashSetTests implements CollectionTests {
         collection.remove("Two");
 
         // Assert
-        Assert.assertEquals(expected, collection);
+        Assert.assertEquals(expected, collection.size());
     }
 
     @Test

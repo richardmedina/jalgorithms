@@ -20,7 +20,7 @@ public class ArrayListTests implements CollectionTests {
 
     @Test
     @Override
-    public void testInsertion() {
+    public void testAdd() {
         // Arrange
         int expected = 4;
         ArrayList<String> collection;
@@ -35,7 +35,7 @@ public class ArrayListTests implements CollectionTests {
 
     @Test
     @Override
-    public void testDeletion() {
+    public void testRemove() {
         // Arrange
         int expected = 2;
         ArrayList<String> collection = getPopulatedCollection();
